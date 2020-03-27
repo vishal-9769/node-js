@@ -1,0 +1,20 @@
+doctype html
+html
+    head
+        title Node-Express-Pug
+        link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet' href='/css/style.css')
+
+    body
+           
+        .container
+            !=messages('message',locals)
+            block content
+            br
+            hr
+            footer
+                p Copyright &copy; 2020
+    script(src="/bower_components/jquery/dist/jquery.js")
+    script(scr="/bower_components/bootstrap/dist/js/bootstrap.js")
+    script(src="/js/main.js")
+    //- script(src="/js/getData.js")

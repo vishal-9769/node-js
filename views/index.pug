@@ -1,0 +1,23 @@
+extends layout
+block content 
+    h1 #{title}
+    form(method='POST',action='/users/add')
+        .form-inline
+            lable FirstName:
+            input.form-control(name='fname',type='text',required='true')
+            lable LastName:
+            input.form-control(name='lname',type='text',required='true')
+            input.btn.btn-primary(type='submit',value='Add')
+            
+        hr
+    table.table-bordered(id='tbl')
+        tbody
+            each user, i in users
+                tr
+                    td=user.fname
+                    td=user.lname
+                    td 
+                        a.btn.btn-primary(href='/user/'+user._id) Edit
+                    td 
+                        a.btn.btn-danger.delete-article(href='#',data-id=user._id) Delete
+        

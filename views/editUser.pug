@@ -1,0 +1,10 @@
+extends layout
+block content 
+    h1 #{title}
+    form(method='POST',action='/users/edit/'+users._id)
+        .form-inline
+            lable FirstName:
+            input.form-control(name='fname',type='text',value=users.fname,required='true')
+            lable LastName:
+            input.form-control(name='lname',type='text',value=users.lname,required='true') 
+            input.btn.btn-primary(type='submit',value='Update')
